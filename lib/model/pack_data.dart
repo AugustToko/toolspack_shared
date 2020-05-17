@@ -1,7 +1,7 @@
 /*
  * Project: tools_pack
  * Module: toolspack
- * Last Modified: 20-4-11 上午9:39
+ * Last Modified: 20-5-17 上午10:25
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
@@ -218,6 +218,7 @@ class CategoryJson {
   }
 }
 
+/// 对应 lingyun_server#agent_model.dart
 class AgentModelJson {
   /// 价格
   /// 1 超星
@@ -269,6 +270,11 @@ class AgentModelJson {
   /// 密码
 //  String password;
 
+  /// 代理公告
+  String notice;
+
+  double accumulatedprofit;
+
   AgentModelJson.fromJson(Map<String, dynamic> json) {
     otherPrice = json['otherPrice'];
     spcode = json['spcode'];
@@ -284,6 +290,8 @@ class AgentModelJson {
     spcode = json['spcode'];
     groceries = json['groceries'];
     totalEarned = json['totalEarned'];
+    notice = json['notice'];
+    accumulatedprofit = json['accumulatedprofit'];
   }
 
   Map<String, dynamic> toJson() {
@@ -301,6 +309,8 @@ class AgentModelJson {
     data['spcode'] = this.spcode;
     data['groceries'] = this.groceries;
     data['totalEarned'] = this.totalEarned;
+    data['notice'] = this.notice;
+    data['accumulatedprofit'] = this.accumulatedprofit;
     return data;
   }
 }

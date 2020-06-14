@@ -1,7 +1,7 @@
 /*
  * Project: tools_pack
  * Module: toolspack
- * Last Modified: 20-5-17 上午10:25
+ * Last Modified: 20-6-14 下午1:00
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
@@ -219,6 +219,7 @@ class CategoryJson {
 }
 
 /// 对应 lingyun_server#agent_model.dart
+/// 供普通用户使用，敏感的信息将会隐藏
 class AgentModelJson {
   /// 价格
   /// 1 超星
@@ -260,22 +261,136 @@ class AgentModelJson {
   String spcode;
 
   /// 总卖出的金钱
-  double totalEarned;
+  /// 用户不可修改、获取
+  /// 供管理员、代理查看
+//  double totalEarned;
 
   /// 代理的备注 （一般存储联系方式）
   /// 代理不可修改、获取
   /// 供管理员查看
 //  String note;
 
-  /// 密码
+  /// 用户不可修改、获取
+  /// 供管理员、代理查看
 //  String password;
 
   /// 代理公告
   String notice;
 
-  double accumulatedprofit;
+  /// 用户不可修改、获取
+  /// 供管理员、代理查看
+//  double accumulatedprofit;
+
+  /// 用户不可修改、获取
+  /// 供管理员、代理查看
+//  String coupon;
 
   AgentModelJson.fromJson(Map<String, dynamic> json) {
+    otherPrice = json['otherPrice'];
+    spcode = json['spcode'];
+    priceP1 = json['priceP1'];
+    priceP2 = json['priceP2'];
+    priceP3 = json['priceP3'];
+    priceP5 = json['priceP5'];
+    priceP6 = json['priceP6'];
+    priceP7 = json['priceP7'];
+    priceP8 = json['priceP8'];
+    priceP12 = json['priceP12'];
+    priceP14 = json['priceP14'];
+    spcode = json['spcode'];
+    groceries = json['groceries'];
+//    totalEarned = json['totalEarned'];
+    notice = json['notice'];
+//    accumulatedprofit = json['accumulatedprofit'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['priceP1'] = this.priceP1;
+    data['priceP2'] = this.priceP2;
+    data['priceP3'] = this.priceP3;
+    data['priceP5'] = this.priceP5;
+    data['priceP6'] = this.priceP6;
+    data['priceP7'] = this.priceP7;
+    data['priceP8'] = this.priceP8;
+    data['priceP12'] = this.priceP12;
+    data['priceP12'] = this.priceP14;
+    data['otherPrice'] = this.otherPrice;
+    data['spcode'] = this.spcode;
+    data['groceries'] = this.groceries;
+//    data['totalEarned'] = this.totalEarned;
+    data['notice'] = this.notice;
+//    data['accumulatedprofit'] = this.accumulatedprofit;
+    return data;
+  }
+}
+
+class AgentModelJsonPrivate {
+  /// 价格
+  /// 1 超星
+  /// 2 智慧树
+  /// 3 高校邦
+  /// 5 名华
+  /// 6 中国大学MOOC
+  /// 7 优学院
+  /// 8 云课堂智慧职教
+  /// 12 u校园
+  /// 14 创就业云课堂
+  ///
+  /// [otherPrice] 其他平台价格
+  double otherPrice;
+
+  double priceP1;
+
+  double priceP2;
+
+  double priceP3;
+
+  double priceP5;
+
+  double priceP6;
+
+  double priceP7;
+
+  double priceP8;
+
+  double priceP12;
+
+  double priceP14;
+
+  /// 杂货
+  /// see [Groceries]
+  String groceries;
+
+  /// 特征码
+  String spcode;
+
+  /// 总卖出的金钱
+  /// 用户不可修改、获取
+  /// 供管理员、代理查看
+  double totalEarned;
+
+  /// 代理的备注 （一般存储联系方式）
+  /// 代理不可修改、获取
+  /// 供管理员查看
+  String note;
+
+  /// 用户不可修改、获取
+  /// 供管理员、代理查看
+  String password;
+
+  /// 代理公告
+  String notice;
+
+  /// 用户不可修改、获取
+  /// 供管理员、代理查看
+  double accumulatedprofit;
+
+  /// 用户不可修改、获取
+  /// 供管理员、代理查看
+  String coupon;
+
+  AgentModelJsonPrivate.fromJson(Map<String, dynamic> json) {
     otherPrice = json['otherPrice'];
     spcode = json['spcode'];
     priceP1 = json['priceP1'];
@@ -292,6 +407,7 @@ class AgentModelJson {
     totalEarned = json['totalEarned'];
     notice = json['notice'];
     accumulatedprofit = json['accumulatedprofit'];
+    coupon = json['coupon'];
   }
 
   Map<String, dynamic> toJson() {
@@ -311,6 +427,7 @@ class AgentModelJson {
     data['totalEarned'] = this.totalEarned;
     data['notice'] = this.notice;
     data['accumulatedprofit'] = this.accumulatedprofit;
+    data['coupon'] = this.coupon;
     return data;
   }
 }

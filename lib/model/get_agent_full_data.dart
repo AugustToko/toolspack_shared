@@ -1,7 +1,7 @@
 /*
  * Project: tools_pack
  * Module: toolspack
- * Last Modified: 20-5-17 上午10:30
+ * Last Modified: 20-6-14 上午11:19
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
@@ -11,14 +11,14 @@ import 'package:toolspackshared/model/pack_data.dart';
 import 'package:toolspackshared/model/rec_course.dart';
 
 class FullAgentData {
-  AgentModelJson agentModelJson;
+  AgentModelJsonPrivate agentModelJson;
   List<RecordCourse> orders;
 
   FullAgentData(this.agentModelJson, this.orders);
 
   FullAgentData.fromJson(Map<String, dynamic> json) {
     agentModelJson =
-        AgentModelJson.fromJson(j.json.decode(json['agentModelJson']));
+        AgentModelJsonPrivate.fromJson(j.json.decode(json['agentModelJson']));
     if (json['orders'] != null) {
       orders = new List<RecordCourse>();
       for (final i in json['orders']) {

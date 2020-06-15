@@ -1,19 +1,22 @@
 /*
  * Project: tools_pack
  * Module: toolspack
- * Last Modified: 20-4-10 上午11:27
+ * Last Modified: 20-6-15 下午2:47
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
-import 'package:toolspackshared/model/student_info.dart';
 import 'package:toolspackshared/model/pack_data.dart';
+import 'package:toolspackshared/model/student_info.dart';
 
 /// 为下单而准备的数据
 class PrePayInfo {
+  /// 课程
   final List<StuObjInfo> dataList;
 
+  /// 订单号
   final String orderText;
 
+  /// packData
   final PackData packData;
 
   PrePayInfo(this.packData, this.orderText, this.dataList);
@@ -33,15 +36,26 @@ class PrePayInfo {
 /// 已经 **下单** 后的数据
 class PayInfo {
 
+  /// 预下单数据
   final PrePayInfo readPayInfo;
 
+  /// 是否机器
   final bool isBot;
+
+  /// 是否加急
   final bool needBoost;
+
+  /// 价格
   final double price;
 
+  /// 日期
   final String date;
 
-  PayInfo(this.readPayInfo, this.isBot, this.needBoost, this.price, this.date);
+  /// 优惠券
+  String couponCode;
+
+  PayInfo(this.readPayInfo, this.isBot, this.needBoost, this.price, this.date,
+      this.couponCode);
 
   /// [PrePayInfo.dataList]
   /// [TargetCourseData.toString]
@@ -64,6 +78,7 @@ class PayInfo {
     data['isBot'] = this.isBot;
     data['needBoost'] = this.needBoost;
     data['price'] = this.price;
+    data['couponCode'] = this.couponCode;
     return data;
   }
 

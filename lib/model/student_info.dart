@@ -1,7 +1,7 @@
 /*
  * Project: tools_pack
  * Module: toolspack
- * Last Modified: 20-4-10 下午3:05
+ * Last Modified: 20-6-15 下午2:47
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
@@ -372,6 +372,7 @@ class CoursePack2Server {
     spcode = json['spcode'] as String;
     isBot = json['isBot'] as bool;
     _price = json['_price'] as double;
+    couponCode = json['couponCode'] as String;
   }
 
   Map<String, dynamic> toJson() {
@@ -384,6 +385,7 @@ class CoursePack2Server {
     data['spcode'] = spcode;
     data['isBot'] = isBot;
     data['_price'] = _price;
+    data['couponCode'] = couponCode;
     return data;
   }
 
@@ -417,8 +419,10 @@ class CoursePack2Server {
   /// 特征码
   String spcode;
 
-  CoursePack2Server(
-      this.user, this.miaoshua, this.spcode, this.orderText, this.isBot);
+  String couponCode;
+
+  CoursePack2Server(this.user, this.miaoshua, this.spcode, this.orderText,
+      this.isBot, this.couponCode);
 }
 
 ///------------------------------------------

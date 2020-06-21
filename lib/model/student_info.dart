@@ -1,7 +1,7 @@
 /*
  * Project: tools_pack
  * Module: toolspack
- * Last Modified: 20-6-15 下午2:47
+ * Last Modified: 20-6-21 下午7:04
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
@@ -419,7 +419,9 @@ class CoursePack2Server {
   /// 特征码
   String spcode;
 
+  /// 优惠券代码, 可空
   String couponCode;
+
 
   CoursePack2Server(this.user, this.miaoshua, this.spcode, this.orderText,
       this.isBot, this.couponCode);

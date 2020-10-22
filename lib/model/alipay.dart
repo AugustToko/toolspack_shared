@@ -5,8 +5,6 @@
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
-import 'package:toolspackshared/model/payInfo.dart';
-
 /// 阿里支付宝返回 json 实体类
 /// 请勿修改
 class AliPayResultNative {

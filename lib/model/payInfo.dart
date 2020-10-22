@@ -5,8 +5,8 @@
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
-import 'package:toolspackshared/model/pack_data.dart';
-import 'package:toolspackshared/model/student_info.dart';
+import 'package:toolspack_shared/model/pack_data.dart';
+import 'package:toolspack_shared/model/student_info.dart';
 
 /// 为下单而准备的数据
 class PrePayInfo {

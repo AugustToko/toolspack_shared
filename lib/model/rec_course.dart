@@ -1,6 +1,6 @@
 import 'dart:convert' as j;
 
-import 'package:toolspackshared/model/student_info.dart';
+import 'package:toolspack_shared/model/student_info.dart';
 
 class RecordCourse {
   /// 订单信息

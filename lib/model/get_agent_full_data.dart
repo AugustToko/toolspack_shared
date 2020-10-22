@@ -7,8 +7,8 @@
 
 import 'dart:convert' as j;
 
-import 'package:toolspackshared/model/pack_data.dart';
-import 'package:toolspackshared/model/rec_course.dart';
+import 'package:toolspack_shared/model/pack_data.dart';
+import 'package:toolspack_shared/model/rec_course.dart';
 
 class FullAgentData {
   AgentModelJsonPrivate agentModelJson;

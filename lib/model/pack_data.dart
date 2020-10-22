@@ -5,7 +5,7 @@
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
-import 'package:toolspackshared/model/groceries.dart';
+import 'package:toolspack_shared/model/groceries.dart';
 
 class PlatformType {
   PlatformType(this.id, this.name);

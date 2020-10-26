@@ -1,7 +1,7 @@
 /*
  * Project: tools_pack
  * Module: toolspack
- * Last Modified: 20-4-7 下午6:15
+ * Last Modified: 20-10-26 下午7:52
  * Copyright (c) 2020 August https://blog.geek-cloud.top/
  */
 
@@ -92,6 +92,11 @@ class AliPayQueryResult {
     data['trade_status'] = this.tradeStatus;
     data['subMsg'] = this.subMsg;
     return data;
+  }
+
+  @override
+  String toString() {
+    return 'AliPayQueryResult{code: $code, msg: $msg, buyerLogonId: $buyerLogonId, buyerPayAmount: $buyerPayAmount, buyerUserId: $buyerUserId, fundBillList: $fundBillList, invoiceAmount: $invoiceAmount, outTradeNo: $outTradeNo, pointAmount: $pointAmount, receiptAmount: $receiptAmount, sendPayDate: $sendPayDate, totalAmount: $totalAmount, tradeNo: $tradeNo, tradeStatus: $tradeStatus, subMsg: $subMsg}';
   }
 }
 

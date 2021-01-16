@@ -4,8 +4,8 @@
 
 For tools pack
 
-```
+```dart
 dependencies:
-  toolspackshared:
+  toolspack_shared:
     path: ../toolspack_shared/
 ```
